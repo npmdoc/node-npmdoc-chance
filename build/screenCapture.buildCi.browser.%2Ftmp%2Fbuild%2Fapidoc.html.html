@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="http://chancejs.com"
-
-    >chance (v1.0.6)</a>
+    <a href="http://chancejs.com">chance (v1.0.6)</a>
 </h1>
 <h4>Chance - Utility library to generate anything random</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.chance">module chance</a><ol>
 
@@ -144,7 +137,7 @@
     }
 
     // if user has provided a function, use that as the generator
-    if (typeof seed === &#x27;function&#x27;) {
+    if (typeof seed === 'function') {
         this.random = seed;
         return this;
     }
@@ -156,14 +149,14 @@
 
     // otherwise, leave this.seed blank so that MT will receive a blank
 
-    for (var i = 0; i &#x3c; arguments.length; i++) {
+    for (var i = 0; i &lt; arguments.length; i++) {
         var seedling = 0;
-        if (Object.prototype.toString.call(arguments[i]) === &#x27;[object String]&#x27;) {
-            for (var j = 0; j &#x3c; arguments[i].length; j++) {
+        if (Object.prototype.toString.call(arguments[i]) === '[object String]') {
+            for (var j = 0; j &lt; arguments[i].length; j++) {
                 // create a numeric hash for each argument, add to seedling
                 var hash = 0;
-                for (var k = 0; k &#x3c; arguments[i].length; k++) {
-                    hash = arguments[i].charCodeAt(k) + (hash &#x3c;&#x3c; 6) + (hash &#x3c;&#x3c; 16) - hash;
+                for (var k = 0; k &lt; arguments[i].length; k++) {
+                    hash = arguments[i].charCodeAt(k) + (hash &lt;&lt; 6) + (hash &lt;&lt; 16) - hash;
                 }
                 seedling += hash;
             }
@@ -200,7 +193,7 @@
     }
 
     // if user has provided a function, use that as the generator
-    if (typeof seed === &#x27;function&#x27;) {
+    if (typeof seed === 'function') {
         this.random = seed;
         return this;
     }
@@ -212,14 +205,14 @@
 
     // otherwise, leave this.seed blank so that MT will receive a blank
 
-    for (var i = 0; i &#x3c; arguments.length; i++) {
+    for (var i = 0; i &lt; arguments.length; i++) {
         var seedling = 0;
-        if (Object.prototype.toString.call(arguments[i]) === &#x27;[object String]&#x27;) {
-            for (var j = 0; j &#x3c; arguments[i].length; j++) {
+        if (Object.prototype.toString.call(arguments[i]) === '[object String]') {
+            for (var j = 0; j &lt; arguments[i].length; j++) {
                 // create a numeric hash for each argument, add to seedling
                 var hash = 0;
-                for (var k = 0; k &#x3c; arguments[i].length; k++) {
-                    hash = arguments[i].charCodeAt(k) + (hash &#x3c;&#x3c; 6) + (hash &#x3c;&#x3c; 16) - hash;
+                for (var k = 0; k &lt; arguments[i].length; k++) {
+                    hash = arguments[i].charCodeAt(k) + (hash &lt;&lt; 6) + (hash &lt;&lt; 16) - hash;
                 }
                 seedling += hash;
             }
@@ -251,24 +244,24 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">Gruntfile = function (grunt) {
-    var js_files = [&#x27;Gruntfile.js&#x27;, &#x27;chance.js&#x27;, &#x27;test/*.js&#x27;];
+    var js_files = ['Gruntfile.js', 'chance.js', 'test/*.js'];
 
     grunt.initConfig({
-        &#x27;js-test&#x27;: {
+        'js-test': {
             options: {
                 coverage: true,
-                coverageTool: &#x27;istanbul&#x27;,
-                coverageFormat: &#x27;lcov&#x27;,
-                identifier: &#x27;chance-coverage&#x27;,
-                reporter: &#x27;Spec&#x27;,
-                pattern: &#x27;test/*.js&#x27;
+                coverageTool: 'istanbul',
+                coverageFormat: 'lcov',
+                identifier: 'chance-coverage',
+                reporter: 'Spec',
+                pattern: 'test/*.js'
             },
             watch: {
                 options: {
                     coverage: false,
-                    reporter: &#x22;Dot&#x22;,
-                    pattern: &#x27;test/*.js&#x27;,
-                    root: &#x27;.&#x27;
+                    reporter: "Dot",
+                    pattern: 'test/*.js',
+                    root: '.'
                 }
             }
         },
@@ -313,37 +306,37 @@
         },
         shell: {
             target: {
-                command: &#x27;cat coverage/chance-coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js &#x26;&#x26; rm -rf ./coverage
-&#x27;
+                command: 'cat coverage/chance-coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js &amp;&amp; rm -rf ./coverage
+'
             }
         },
         uglify: {
             dist: {
                 options: {
                   sourceMap: true,
-                  sourceMapName: &#x27;dist/chance.min.js.map&#x27;
+                  sourceMapName: 'dist/chance.min.js.map'
                 },
                 files: {
-                    &#x27;dist/chance.min.js&#x27;: [&#x27;chance.js&#x27;]
+                    'dist/chance.min.js': ['chance.js']
                 }
             }
         },
         watch: {
             options: { livereload: true },
             files: js_files,
-            tasks: [&#x27;jshint&#x27;, &#x27;js-test:watch&#x27;, &#x27;uglify&#x27;]
+            tasks: ['jshint', 'js-test:watch', 'uglify']
         }
     });
 
-    grunt.loadNpmTasks(&#x27;grunt-contrib-jshint&#x27;);
-    grunt.loadNpmTasks(&#x27;grunt-contrib-uglify&#x27;);
-    grunt.loadNpmTasks(&#x27;grunt-contrib-watch&#x27;);
-    grunt.loadNpmTasks(&#x27;grunt-js-test&#x27;);
-    grunt.loadNpmTasks(&#x27;grunt-shell&#x27;);
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-js-test');
+    grunt.loadNpmTasks('grunt-shell');
 
-    grunt.registerTask(&#x27;default&#x27;, [&#x27;watch&#x27;]);
-    grunt.registerTask(&#x27;test&#x27;, [&#x27;js-test&#x27;, &#x27;shell&#x27;]);
-    grunt.registerTask(&#x27;test-ci&#x27;, [&#x27;jshint&#x27;, &#x27;js-test&#x27;, &#x27;shell&#x27;]);
+    grunt.registerTask('default', ['watch']);
+    grunt.registerTask('test', ['js-test', 'shell']);
+    grunt.registerTask('test-ci', ['jshint', 'js-test', 'shell']);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -378,24 +371,24 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">Gruntfile = function (grunt) {
-    var js_files = [&#x27;Gruntfile.js&#x27;, &#x27;chance.js&#x27;, &#x27;test/*.js&#x27;];
+    var js_files = ['Gruntfile.js', 'chance.js', 'test/*.js'];
 
     grunt.initConfig({
-        &#x27;js-test&#x27;: {
+        'js-test': {
             options: {
                 coverage: true,
-                coverageTool: &#x27;istanbul&#x27;,
-                coverageFormat: &#x27;lcov&#x27;,
-                identifier: &#x27;chance-coverage&#x27;,
-                reporter: &#x27;Spec&#x27;,
-                pattern: &#x27;test/*.js&#x27;
+                coverageTool: 'istanbul',
+                coverageFormat: 'lcov',
+                identifier: 'chance-coverage',
+                reporter: 'Spec',
+                pattern: 'test/*.js'
             },
             watch: {
                 options: {
                     coverage: false,
-                    reporter: &#x22;Dot&#x22;,
-                    pattern: &#x27;test/*.js&#x27;,
-                    root: &#x27;.&#x27;
+                    reporter: "Dot",
+                    pattern: 'test/*.js',
+                    root: '.'
                 }
             }
         },
@@ -440,37 +433,37 @@
         },
         shell: {
             target: {
-                command: &#x27;cat coverage/chance-coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js &#x26;&#x26; rm -rf ./coverage
-&#x27;
+                command: 'cat coverage/chance-coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js &amp;&amp; rm -rf ./coverage
+'
             }
         },
         uglify: {
             dist: {
                 options: {
                   sourceMap: true,
-                  sourceMapName: &#x27;dist/chance.min.js.map&#x27;
+                  sourceMapName: 'dist/chance.min.js.map'
                 },
                 files: {
-                    &#x27;dist/chance.min.js&#x27;: [&#x27;chance.js&#x27;]
+                    'dist/chance.min.js': ['chance.js']
                 }
             }
         },
         watch: {
             options: { livereload: true },
             files: js_files,
-            tasks: [&#x27;jshint&#x27;, &#x27;js-test:watch&#x27;, &#x27;uglify&#x27;]
+            tasks: ['jshint', 'js-test:watch', 'uglify']
         }
     });
 
-    grunt.loadNpmTasks(&#x27;grunt-contrib-jshint&#x27;);
-    grunt.loadNpmTasks(&#x27;grunt-contrib-uglify&#x27;);
-    grunt.loadNpmTasks(&#x27;grunt-contrib-watch&#x27;);
-    grunt.loadNpmTasks(&#x27;grunt-js-test&#x27;);
-    grunt.loadNpmTasks(&#x27;grunt-shell&#x27;);
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-js-test');
+    grunt.loadNpmTasks('grunt-shell');
 
-    grunt.registerTask(&#x27;default&#x27;, [&#x27;watch&#x27;]);
-    grunt.registerTask(&#x27;test&#x27;, [&#x27;js-test&#x27;, &#x27;shell&#x27;]);
-    grunt.registerTask(&#x27;test-ci&#x27;, [&#x27;jshint&#x27;, &#x27;js-test&#x27;, &#x27;shell&#x27;]);
+    grunt.registerTask('default', ['watch']);
+    grunt.registerTask('test', ['js-test', 'shell']);
+    grunt.registerTask('test-ci', ['jshint', 'js-test', 'shell']);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -502,3 +495,4 @@
     ]
 </div>
 </div>
+</body></html>
