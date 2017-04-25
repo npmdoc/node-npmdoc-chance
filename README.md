@@ -1,4 +1,7 @@
-# api documentation for  [chance (v1.0.6)](http://chancejs.com)  [![npm package](https://img.shields.io/npm/v/npmdoc-chance.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-chance) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-chance.svg)](https://travis-ci.org/npmdoc/node-npmdoc-chance)
+# npmdoc-chance
+
+#### basic api documentation for  [chance (v1.0.6)](http://chancejs.com)  [![npm package](https://img.shields.io/npm/v/npmdoc-chance.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-chance) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-chance.svg)](https://travis-ci.org/npmdoc/node-npmdoc-chance)
+
 #### Chance - Utility library to generate anything random
 
 [![NPM](https://nodei.co/npm/chance.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/chance)
@@ -83,7 +86,8 @@
             "test"
         ]
     },
-    "version": "1.0.6"
+    "version": "1.0.6",
+    "bin": {}
 }
 ```
 
